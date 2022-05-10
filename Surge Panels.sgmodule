@@ -4,26 +4,44 @@
 
 [Panel]
 SurgePro_ReloadProfile = script-name=SurgePro_ReloadProfile,title=启动时长,content=请刷新,update-interval=1
+
 covid19 = script-name=covid19, title=新冠疫情查询, content=请刷新, update-interval=600
+
 net-info-panel = title=网络状态,content=请刷新,style=info,script-name=net-info-panel
+
 TrafficStatistics = script-name=TrafficStatistics,title=流量统计,content=请刷新,update-interval=1
+
 网络信息 = script-name=网络信息,title=网络信息,content=请刷新,style=info,update-interval=60
+
 flushDNS = script-name=flushDNS,title=flushDNS,content=请刷新,update-interval=600
+
 stream-all = script-name=stream-all,title=流媒体解锁检测,content=请刷新面板,update-interval=-1
+
 配置重载 = title=配置重载,content=配置重载,style=info,script-name=配置重载,update-interval=-1
+
 
 [Script]
 type=generic,timeout=10,script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/surgepro_reloadprofile.js,argument=icon=crown.fill&color=#f6c970
+
 net-info-panel = script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/net-info-panel.js,type=generic
+
 covid19 = type=generic, script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/Covid19.js
+
 TrafficStatistics = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/trafficstatistics.js,argument=icon=arrow.up.arrow.down.circle&color=#5d84f8
+
 网络信息 = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/ipcheck.js
+
 flushDNS = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/flushDNS.js,argument=title=DNS FLush&icon=arrow.clockwise&color=#3d3d5b
+
 stream-all = type=generic,timeout=15,script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/stream-all.js
+
 配置重载 = script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/Profile-Reload.js,type=generic
+
 event network-changed script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/running-mode.js
+
 event network-changed script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/persistent-policy.js
 Persistent-Policy = type=http-request,pattern=https?:\/\/persistent-policy\.com,script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/persistent-policy.js,requires-body=true
+
 Auto-Policy = script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/auto-policy.js,type=event,event-name=network-changed
 
 [MITM]
