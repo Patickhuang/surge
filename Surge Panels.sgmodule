@@ -38,7 +38,7 @@ TrafficStatistics = type=generic,timeout=10,script-path=https://raw.githubuserco
 
 网络信息 = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/ipcheck.js
 
-flushDNS = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/flushDNS.js,argument=title=DNS FLush&icon=bonjour&color=#002FA7
+flushDNS = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/flushDNS.js,argument=title=DNS|服务&icon=bonjour&color=#002FA7
 
 stream-all = type=generic,timeout=15,script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/stream-all.js
 
