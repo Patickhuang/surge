@@ -29,7 +29,7 @@ const v4IP = v4.primaryAddress;
         content: `IP：${ip} \n`
             + (wifi.ssid ? `路由器地址：${router}\n` : "")
             + `外部 IP：${externalIP}`,
-        icon: wifi.ssid ? "wifi.circle.fill" : "antenna.radiowaves.left.and.right"
+        icon: wifi.ssid ? "wifi.circle" : "antenna.radiowaves.left.and.right"
     };
     $.done(body);
 })();
