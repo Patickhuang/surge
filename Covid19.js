@@ -29,7 +29,7 @@ $httpClient.get(url, function(error, response, data){
      $done({
        title: "疫情   :   新增 | 现存"+ "   "+nowtime(),
        icon:"filemenu.and.cursorarrow",
-       "icon-color":"#5AC8FA",
+       "icon-color":"#002FA7",
        content: ala.replace(/\n$/, "")
      });
     }
