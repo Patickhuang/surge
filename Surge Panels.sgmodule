@@ -21,17 +21,17 @@ stream-all = script-name=stream-all,title=流媒体解锁检测,content=请刷�
 
 
 [Script]
-type=generic,timeout=10,script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/surgepro_reloadprofile.js,argument=icon=crown.fill&color=#f6c970
+type=generic,timeout=10,script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/surgepro_reloadprofile.js,argument=icon=crown.fill&color=#002FA7
 
 net-info-panel = script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/net-info-panel.js,type=generic
 
 covid19 = type=generic, script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/Covid19.js
 
-TrafficStatistics = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/trafficstatistics.js,argument=icon=arrow.up.arrow.down.circle&color=#5d84f8
+TrafficStatistics = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/trafficstatistics.js,argument=icon=arrow.up.arrow.down.circle&color=#002FA7
 
 网络信息 = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/ipcheck.js
 
-flushDNS = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/flushDNS.js,argument=title=DNS FLush&icon=arrow.clockwise&color=#3d3d5b
+flushDNS = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/flushDNS.js,argument=title=DNS FLush&icon=arrow.clockwise&color=#002FA7
 
 stream-all = type=generic,timeout=15,script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/stream-all.js
 
