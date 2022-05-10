@@ -11,8 +11,6 @@
 
 functionstatus = script-name=functionstatus, title="Surge", content="请刷新", update-interval=60
 
-SurgePro_ReloadProfile = script-name=SurgePro_ReloadProfile,title=启动时长,content=请刷新,update-interval=1
-
 covid19 = script-name=covid19, title=新冠疫情查询, content=请刷新, update-interval=600
 
 net-info-panel = title=网络状态,content=请刷新,style=info,script-name=net-info-panel
@@ -31,8 +29,6 @@ stream-all = script-name=stream-all,title=流媒体解锁检测,content=请刷�
 [Script]
 
 functionstatus = type=generic, script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/functionstatus.js,argument=icon=crown.fill&color=#002FA7
-
-type=generic,timeout=10,script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/surgepro_reloadprofile.js,argument=icon=crown.fill&color=#002FA7
 
 net-info-panel = script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/net-info-panel.js,type=generic
 
