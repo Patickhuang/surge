@@ -23,7 +23,7 @@ stream-all = script-name=stream-all,title=流媒体解锁检测,content=请刷�
 [Script]
 type=generic,timeout=10,script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/surgepro_reloadprofile.js,argument=icon=crown.fill&color=#002FA7
 
-net-info-panel = script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/net-info-panel.js,type=generic,argument=title=net-info-panel net-info-panel&icon=wifi.circle.fill&color=#002FA7
+net-info-panel = script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/net-info-panel.js,type=generic,icon=wifi.circle.fill&color=#002FA7
 
 covid19 = type=generic, script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/Covid19.js
 
