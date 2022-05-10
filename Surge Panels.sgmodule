@@ -34,11 +34,11 @@ net-info-panel = script-path=https://raw.githubusercontent.com/Patickhuang/surge
 
 covid19 = type=generic, script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/Covid19.js
 
-TrafficStatistics = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/trafficstatistics.js,argument=icon=network.badge.shield.half.filled&color=#4169E1
+TrafficStatistics = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/trafficstatistics.js,argument=icon=network.badge.shield.half.filled&color=#1E90FF
 
 网络信息 = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/ipcheck.js
 
-flushDNS = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/flushDNS.js,argument=title=DNS信息&icon=bonjour&color=#4169E1
+flushDNS = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/flushDNS.js,argument=title=DNS信息&icon=bonjour&color=#1E90FF
 
 stream-all = type=generic,timeout=15,script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/stream-all.js
 
