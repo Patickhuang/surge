@@ -18,7 +18,7 @@ if ($trigger == "button") {
 $done({
     title:"Surge Pro  已运行"+startTime,
     content:"Mitm:"+icon_status(mitm_status.enabled)+"  Rewrite:"+icon_status(rewrite_status.enabled)+"  Scripting:"+icon_status(scripting_status.enabled),
-    icon: icon_s?"crown.fill":"crown.fill",
+    icon: icon_s?"crown.fill":"exclamationmark.triangle",
    "icon-color":icon_s?"#16A951":"#FF7500"
 });
 })();
