@@ -19,8 +19,8 @@ covid19 = type=generic, script-path=https://raw.githubusercontent.com/Patickhuan
 TrafficStatistics = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/trafficstatistics.js,argument=icon=arrow.up.arrow.down.circle&color=#5d84f8
 网络信息 = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/ipcheck.js
 flushDNS = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/flushDNS.js,argument=title=DNS FLush&icon=arrow.clockwise&color=#3d3d5b
-配置重载 = script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/Profile-Reload.js,type=generic
 stream-all = type=generic,timeout=15,script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/stream-all.js
+配置重载 = script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/Profile-Reload.js,type=generic
 event network-changed script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/running-mode.js
 event network-changed script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/persistent-policy.js
 Persistent-Policy = type=http-request,pattern=https?:\/\/persistent-policy\.com,script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/persistent-policy.js,requires-body=true
