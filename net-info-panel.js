@@ -14,7 +14,7 @@ const v4IP = v4.primaryAddress;
         $.done({
             title: "未连接网络",
             content: "请检查网络连接",
-            icon: "airplane"
+            icon: "wifi.circle.fill"
         });
         return;
     }
