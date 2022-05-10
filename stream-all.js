@@ -23,7 +23,7 @@ const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (
       title: '流媒体解锁检测',
       content: '',
       icon: 'sparkles.tv.fill',
-      'icon-color': '#002FA7',
+      'icon-color': '#1E90FF',
     }
   let [{ region, status }] = await Promise.all([testDisneyPlus()])
     await Promise.all([check_youtube_premium(),check_netflix()])
