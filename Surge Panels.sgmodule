@@ -30,7 +30,7 @@ stream-all = script-name=stream-all,title=流媒体解锁检测,content=请刷�
 
 [Script]
 
-functionstatus = type=generic, script-path=https://raw.githubusercontent.com/smartmimi/conf/master/surge/functionstatus.js,argument=icon=crown.fill&color=#002FA7
+functionstatus = type=generic, script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/functionstatus.js,argument=icon=crown.fill&color=#002FA7
 
 type=generic,timeout=10,script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/surgepro_reloadprofile.js,argument=icon=crown.fill&color=#002FA7
 
