@@ -24,6 +24,8 @@ stream-all = script-name=stream-all,title=流媒体解锁检测,content=请刷�
 
 配置重载 = title=配置重载,content=配置重载,style=info,script-name=配置重载,update-interval=-1
 
+functionstatus = script-name=functionstatus, title="Surge", content="请刷新", update-interval=60
+
 
 [Script]
 type=generic,timeout=10,script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/surgepro_reloadprofile.js,argument=icon=crown.fill&color=#002FA7
@@ -48,6 +50,8 @@ event network-changed script-path=https://raw.githubusercontent.com/Patickhuang/
 Persistent-Policy = type=http-request,pattern=https?:\/\/persistent-policy\.com,script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/persistent-policy.js,requires-body=true
 
 Auto-Policy = script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/auto-policy.js,type=event,event-name=network-changed
+
+functionstatus = type=generic, script-path=https://raw.githubusercontent.com/smartmimi/conf/master/surge/functionstatus.js
 
 [MITM]
 hostname = %APPEND% persistent-policy.com，www.google.cn, www.g.cn
