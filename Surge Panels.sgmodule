@@ -5,6 +5,7 @@
 [URL Rewrite]
 ^https?://(www.)?g.cn https://www.google.com 302
 ^https?://(www.)?google.cn https://www.google.com 302
+^https?:\/\/(www.)?(g|google)\.cn https://www.google.com 302
 
 [Panel]
 SurgePro_ReloadProfile = script-name=SurgePro_ReloadProfile,title=启动时长,content=请刷新,update-interval=1
