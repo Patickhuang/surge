@@ -15,6 +15,7 @@ const v4IP = v4.primaryAddress;
             title: "未连接网络",
             content: "请检查网络连接",
             icon: "antenna.radiowaves.left.and.right.circle.fill"
+            "icon-color":icon_s?"#002FA7":"#FF7500"
         });
         return;
     }
@@ -30,6 +31,7 @@ const v4IP = v4.primaryAddress;
             + (wifi.ssid ? `路由器地址：${router}\n` : "")
             + `外部 IP：${externalIP}`,
         icon: wifi.ssid ? "wifi.circle.fill" : "antenna.radiowaves.left.and.right"
+        "icon-color":icon_s?"#002FA7":"#FF7500"
     };
     $.done(body);
 })();
