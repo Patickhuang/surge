@@ -19,7 +19,7 @@ TrafficStatistics = script-name=TrafficStatistics,title=流量统计,content=请
 
 网络信息 = script-name=网络信息,title=网络信息,content=请刷新,style=info,update-interval=60
 
-flushDNS = script-name=flushDNS,title=flushDNS,content=请刷新,update-interval=600
+DNS|服务 = script-name=DNS|服务,title=DNS|服务,content=请刷新,update-interval=600
 
 stream-all = script-name=stream-all,title=流媒体解锁检测,content=请刷新面板,update-interval=-1
 
