@@ -23,7 +23,7 @@ flushDNS = script-name=flushDNS,title=flushDNS,content=请刷新,update-interval
 
 stream-all = script-name=stream-all,title=流媒体解锁检测,content=请刷新面板,update-interval=-1
 
-配置重载 = title=配置重载,content=配置重载,style=info,script-name=配置重载,update-interval=-1
+
 
 
 [Script]
