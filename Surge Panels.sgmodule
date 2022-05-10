@@ -30,7 +30,7 @@ stream-all = script-name=stream-all,title=流媒体解锁检测,content=请刷�
 
 functionstatus = type=generic, script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/functionstatus.js
 
-net-info-panel = script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/net-info-panel.js,type=generic,color=#002FA7
+net-info-panel = script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/net-info-panel.js,type=generic
 
 covid19 = type=generic, script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/Covid19.js
 
