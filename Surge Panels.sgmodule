@@ -4,7 +4,7 @@
 
 [General]
 force-http-engine-hosts = %APPEND% boxjs.com, boxjs.net
-skip-proxy = %APPEND% iosapps.itunes.apple.com
+skip-proxy = iosapps.itunes.apple.com
 
 [Rule]
 DOMAIN,mesu.apple.com,REJECT
