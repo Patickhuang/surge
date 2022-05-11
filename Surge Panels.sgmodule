@@ -17,6 +17,11 @@ DOMAIN,xp.apple.com,REJECT
 ^https?://(www.)?google.cn https://www.google.com 302
 ^https?:\/\/(www.)?(g|google)\.cn https://www.google.com 302
 
+# > TikTok Unlock & remove logo (By Choler)
+(?<=_region=)CN(?=&) JP 307
+(?<=&app_version=)16..(?=.?.?&) 1 307
+(?<=\?version_code=)16..(?=.?.?&) 1 307
+
 [Panel]
 
 functionstatus = script-name=functionstatus, title="Surge Pro", content="请刷新", update-interval=60
@@ -65,5 +70,6 @@ TF下载修正 = type=http-request,pattern=^https?:\/\/testflight\.apple\.com\/v
 
 Crunchyroll Adblock = type=http-response,pattern=https://beta-api.crunchyroll.com/cms,requires-body=1,max-size=-1,script-path=https://raw.githubusercontent.com/Marcio2536/MySurge/main/Script/crunchyroll.js,script-update-interval=0
 
+http-response ^https?://api\.m\.jd\.com/(client\.action|api)\?functionId=(wareBusiness|serverConfig|basicConfig|lite_wareBusiness|pingou_item) requires-body=true, script-path=https://raw.githubusercontent.com/Tartarus2014/Script/master/jd_price_lite.js, tag=京东比价 Lite(通知版)
 [MITM]
-hostname = %APPEND% persistent-policy.com，www.google.cn, www.g.cn，sub.store，testflight.apple.com，beta-api.crunchyroll.com
+hostname = %APPEND% persistent-policy.com，www.google.cn, www.g.cn，sub.store，testflight.apple.com，beta-api.crunchyroll.com，api.m.jd.com
