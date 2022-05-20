@@ -1,5 +1,4 @@
-#!name=APP开屏广告拦截，APP启动广告拦截！
-#!desc=APP开屏广告拦截，APP启动广告拦截！
+#APP开屏广告拦截，APP启动广告拦截！
 [Rule]
 # > 光大银行阳光惠生活
 DOMAIN-SUFFIX, talk.bz.getui.com, reject
