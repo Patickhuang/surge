@@ -2,7 +2,7 @@
 #!desc=APP开屏广告拦截，APP启动广告拦截！
 [Rule]
 # > 光大银行阳光惠生活
-DOMAIN-keyword, talk.bz.getui.com, reject
+DOMAIN-SUFFIX, talk.bz.getui.com, reject
 # > 民生银行
 DOMAIN-keyword, cm-10-134.getui.com, reject
 DOMAIN-keyword, sdk.open.talk.getui.com, reject
