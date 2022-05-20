@@ -9538,16 +9538,12 @@ IP-CIDR,211.161.101.110/32, reject
 # > Huawei AspiegelBot
 IP-CIDR,114.119.160.0/21, reject
 # > KuaiZip
-# https://zhuanlan.zhihu.com/p/39534279, reject
 DOMAIN-SUFFIX,kuaizip.com, reject
 # > MacKeeper
-# https://www.lizhi.io/blog/40002904, reject
 DOMAIN-SUFFIX,zryydi.com, reject
 # > Adobe Flash China Special Edition
-# https://www.zhihu.com/question/281163698/answer/441388130, reject
 DOMAIN,geo2.adobe.com, reject
 # > C&J Marketing
-# https://www.zhihu.com/question/46746200, reject
 DOMAIN-SUFFIX,alienskins.cn, reject
 DOMAIN-SUFFIX,anydeskchina.cn, reject
 DOMAIN-SUFFIX,betterzipcn.com, reject
@@ -9615,7 +9611,6 @@ DOMAIN,tracklog.58.com, reject
 DOMAIN,track.tiara.daum.net, reject
 DOMAIN,track.tiara.kakao.com, reject
 # > GozenData
-# https://www.v2ex.com/t/772523, reject
 DOMAIN-SUFFIX,gozendata.com, reject
 DOMAIN-SUFFIX,gzads.com, reject
 DOMAIN-SUFFIX,gz-data.com, reject
