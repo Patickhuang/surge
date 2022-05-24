@@ -1,11 +1,12 @@
 #!name=Surge Patickhuang
-#!desc=Surge 运行时间:配置重载/本地网络状态/网络信息/google/自动切换策略组/屏蔽iOS系统更新/BoxJs/高级订阅管理工具/Crunchyroll去广告/流媒体解锁检测/新冠疫情查询/TestFlight区域限制解除/京东比价 Lite(通知版)/淘宝历史价格
+#!desc=Surge自用 运行时间:配置重载/本地网络状态/网络信息/google/自动切换策略组/屏蔽iOS系统更新/BoxJs/高级订阅管理工具/Crunchyroll去广告/流媒体解锁检测/新冠疫情查询/TestFlight区域限制解除/京东比价 Lite(通知版)/淘宝历史价格
 #!system=ios
 
 [General]
 force-http-engine-hosts = %APPEND% boxjs.com, boxjs.net
 
 [Rule]
+# 屏蔽iOS系统更新
 DOMAIN,mesu.apple.com,REJECT
 DOMAIN,gdmf.apple.com,REJECT
 DOMAIN,updates-http.cdn-apple.com,REJECT
@@ -40,39 +41,58 @@ stream-all = script-name=stream-all,title=流媒体解锁检测,content=请刷�
 
 [Script]
 
+# 重载配置
 functionstatus = type=generic, script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/functionstatus.js
 
+# 网络状态
 net-info-panel = script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/net-info-panel.js,type=generic
 
+# 新冠疫情查询
 covid19 = type=generic, script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/Covid19.js
 
+# 网络界面
 TrafficStatistics = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/trafficstatistics.js,argument=icon=network.badge.shield.half.filled&color=#1E90FF
 
 网络信息 = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/ipcheck.js
 
+# DNS信息
 flushDNS = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/flushDNS.js,argument=title=DNS信息&icon=bonjour&color=#1E90FF
 
+# 流媒体解锁检测
 stream-all = type=generic,timeout=15,script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/stream-all.js
 
+# 运行模式
 event network-changed script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/running-mode.js
 
+# 策略组
 event network-changed script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/persistent-policy.js
 Persistent-Policy = type=http-request,pattern=https?:\/\/persistent-policy\.com,script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/persistent-policy.js,requires-body=true
 
+# 自动策略
 Auto-Policy = script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/auto-policy.js,type=event,event-name=network-changed
 
+# Boxjs
 Rewrite: BoxJs = type=http-request,pattern=https?:\/\/boxjs\.(com|net),script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/box/chavy.boxjs.js, requires-body=true, timeout=120
 
+# 高级订阅管理工具
 Sub-Store = type=http-request,pattern=^https?:\/\/sub\.store,script-path=https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/backend/sub-store.min.js,requires-body=true,timeout=120,max-size=131072
 
+# Crunchyroll去广告
 Crunchyroll Adblock = type=http-response,pattern=https://beta-api.crunchyroll.com/cms,requires-body=1,max-size=-1,script-path=https://raw.githubusercontent.com/Marcio2536/MySurge/main/Script/crunchyroll.js,script-update-interval=0
 
+# 京东比价 Lite(通知版)
 http-response ^https?://api\.m\.jd\.com/(client\.action|api)\?functionId=(wareBusiness|serverConfig|basicConfig|lite_wareBusiness|pingou_item) requires-body=true, script-path=https://raw.githubusercontent.com/Tartarus2014/Script/master/jd_price_lite.js, tag=京东比价 Lite(通知版)
 
 解除微信链接限制 = type=http-response,pattern=^https\:\/\/(weixin110\.qq|security.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/UnblockURLinWeChat.js
 
 # 微信去广告
 http-response ^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/Wechat.js
+
+# 酷我VIP
+http-response ^https?:\/\/vip1\.kuwo\.cn\/(vip\/v2\/user\/vip|vip\/spi/mservice) requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Kuwo.js
+
+# 脚本转换器
+http-response ^https?:\/\/(raw|gist)\.githubusercontent.com/.*\.js$ script-path=https://raw.githubusercontent.com/Peng-YM/ScriptConverter/master/js-converter.js, requires-body = true
 
 # TF 下载
 TF下载修正 = type=http-request,pattern=^https?:\/\/testflight\.apple\.com\/v\d\/accounts\/.+?\/install$,requires-body=1,max-size=0,script-path=https://gist.githubusercontent.com/NobyDa/9be418b93afc5e9c8a8f4d28ae403cf2/raw/TF_Download.js
@@ -82,4 +102,4 @@ TF下载修正 = type=http-request,pattern=^https?:\/\/testflight\.apple\.com\/v
 淘宝_历史价格 = type=http-response,requires-body=1,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/source/script/6e15bb0cadb8e75062bf44df91e4814a.js,pattern=^https?://trade-acs\.m\.taobao\.com/gw/mtop\.taobao\.detail\.getdetail
 
 [MITM]
-hostname = %APPEND% persistent-policy.com，www.google.cn, www.g.cn，sub.store，testflight.apple.com，beta-api.crunchyroll.com，api.m.jd.com，trade-acs.m.taobao.com, mp.weixin.qq.com, weixin110.qq.com, testflight.apple.com, security.wechat.com
+hostname = %APPEND% persistent-policy.com，www.google.cn, www.g.cn，sub.store，testflight.apple.com，beta-api.crunchyroll.com，api.m.jd.com，trade-acs.m.taobao.com, mp.weixin.qq.com, weixin110.qq.com, testflight.apple.com, security.wechat.com，vip1.kuwo.cn，raw.githubusercontent.com, gist.githubusercontent.com
