@@ -102,4 +102,4 @@ TF下载修正 = type=http-request,pattern=^https?:\/\/testflight\.apple\.com\/v
 淘宝_历史价格 = type=http-response,requires-body=1,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/source/script/6e15bb0cadb8e75062bf44df91e4814a.js,pattern=^https?://trade-acs\.m\.taobao\.com/gw/mtop\.taobao\.detail\.getdetail
 
 [MITM]
-hostname = %APPEND% persistent-policy.com，www.google.cn, www.g.cn，sub.store，testflight.apple.com，beta-api.crunchyroll.com，api.m.jd.com，trade-acs.m.taobao.com, mp.weixin.qq.com, weixin110.qq.com, testflight.apple.com, security.wechat.com，vip1.kuwo.cn，raw.githubusercontent.com, gist.githubusercontent.com
+hostname = %APPEND% persistent-policy.com，www.google.cn, www.g.cn，%APPEND% sub.store，testflight.apple.com，beta-api.crunchyroll.com，api.m.jd.com，trade-acs.m.taobao.com, mp.weixin.qq.com, weixin110.qq.com, testflight.apple.com, security.wechat.com，vip1.kuwo.cn，raw.githubusercontent.com, gist.githubusercontent.com
