@@ -1,5 +1,5 @@
 #!name=Surge Patickhuang
-#!desc=Surge自用 运行时间:配置重载/本地网络状态/网络信息/google/自动切换策略组/屏蔽iOS系统更新/BoxJs/高级订阅管理工具/Crunchyroll去广告/流媒体解锁检测/新冠疫情查询/TestFlight区域限制解除/京东比价 Lite(通知版)/淘宝历史价格
+#!desc=Surge自用 运行时间:配置重载/本地网络状态/网络信息/google/自动切换策略组/屏蔽iOS系统更新/BoxJs/高级订阅管理工具/Crunchyroll去广告/流媒体解锁检测/新冠疫情查询/TestFlight区域限制解除/京东比价 Lite(通知版)
 #!system=ios
 
 [General]
@@ -97,9 +97,6 @@ http-response ^https?:\/\/(raw|gist)\.githubusercontent.com/.*\.js$ script-path=
 # TF 下载
 TF下载修正 = type=http-request,pattern=^https?:\/\/testflight\.apple\.com\/v\d\/accounts\/.+?\/install$,requires-body=1,max-size=0,script-path=https://gist.githubusercontent.com/NobyDa/9be418b93afc5e9c8a8f4d28ae403cf2/raw/TF_Download.js
 
-# 淘宝比价Lite弹窗版
-http-request ^http://.+/amdc/mobileDispatch requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/tb_price_lite.js,tag=淘宝比价1 Lite(通知版)
-http-response ^https?://trade-acs\.m\.taobao\.com/gw/mtop\.taobao\.detail\.getdetail requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/tb_price_lite.js,tag=淘宝比价2 Lite(通知版)
 
 [MITM]
-hostname = %APPEND% persistent-policy.com，www.google.cn, www.g.cn，sub.store，testflight.apple.com，beta-api.crunchyroll.com，api.m.jd.com，trade-acs.m.taobao.com, mp.weixin.qq.com, weixin110.qq.com, testflight.apple.com, security.wechat.com，musicpay.kuwo.cn, vip1.kuwo.cn，raw.githubusercontent.com, gist.githubusercontent.com
+hostname = %APPEND% persistent-policy.com，www.google.cn, www.g.cn，sub.store，testflight.apple.com，beta-api.crunchyroll.com，api.m.jd.com, mp.weixin.qq.com, weixin110.qq.com, testflight.apple.com, security.wechat.com，musicpay.kuwo.cn, vip1.kuwo.cn，raw.githubusercontent.com, gist.githubusercontent.com
