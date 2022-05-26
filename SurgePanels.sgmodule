@@ -83,6 +83,14 @@ Crunchyroll Adblock = type=http-response,pattern=https://beta-api.crunchyroll.co
 # 京东比价 Lite(通知版)
 http-response ^https?://api\.m\.jd\.com/(client\.action|api)\?functionId=(wareBusiness|serverConfig|basicConfig|lite_wareBusiness|pingou_item) requires-body=true, script-path=https://raw.githubusercontent.com/Tartarus2014/Script/master/jd_price_lite.js, tag=京东比价 Lite(通知版)
 
+# > 淘宝比价
+# 不生效或失效的需要卸载 tb 重装，注意不开脚本进 tb 会失效
+http-request ^http://.+/amdc/mobileDispatch requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/tb_price.js,tag=淘宝比价1(内置版)
+http-response ^https?://trade-acs\.m\.taobao\.com/gw/mtop\.taobao\.detail\.getdetail requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/tb_price.js,tag=淘宝比价2(内置版)
+# Lite弹窗版
+http-request ^http://.+/amdc/mobileDispatch requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/tb_price_lite.js,tag=淘宝比价1 Lite(通知版)
+http-response ^https?://trade-acs\.m\.taobao\.com/gw/mtop\.taobao\.detail\.getdetail requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/tb_price_lite.js,tag=淘宝比价2 Lite(通知版)
+
 解除微信链接限制 = type=http-response,pattern=^https\:\/\/(weixin110\.qq|security.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/UnblockURLinWeChat.js
 
 # 微信去广告
@@ -99,4 +107,4 @@ TF下载修正 = type=http-request,pattern=^https?:\/\/testflight\.apple\.com\/v
 
 
 [MITM]
-hostname = %APPEND% persistent-policy.com，www.google.cn, www.g.cn，sub.store，testflight.apple.com，beta-api.crunchyroll.com，api.m.jd.com, mp.weixin.qq.com, weixin110.qq.com, testflight.apple.com, security.wechat.com，musicpay.kuwo.cn, vip1.kuwo.cn，raw.githubusercontent.com, gist.githubusercontent.com
+hostname = %APPEND% trade-acs.m.taobao.com，persistent-policy.com，www.google.cn, www.g.cn，sub.store，testflight.apple.com，beta-api.crunchyroll.com，api.m.jd.com, mp.weixin.qq.com, weixin110.qq.com, testflight.apple.com, security.wechat.com，musicpay.kuwo.cn, vip1.kuwo.cn，raw.githubusercontent.com, gist.githubusercontent.com
