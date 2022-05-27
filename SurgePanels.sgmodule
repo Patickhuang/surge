@@ -21,7 +21,7 @@ DOMAIN,xp.apple.com,REJECT
 
 functionstatus = script-name=functionstatus, title="Surge Pro", content="请刷新", update-interval=60
 
-covid19 = script-name=covid19, title=新冠疫情查询, content=请刷新, update-interval=600
+covid19 = script-name=covid19, title=新冠疫情查询, content=请刷新, update-interval=60
 
 net-info-panel = title=网络状态,content=请刷新,style=info,script-name=net-info-panel
 
