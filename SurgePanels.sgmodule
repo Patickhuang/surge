@@ -17,10 +17,12 @@ DOMAIN,xp.apple.com,REJECT
 ^https?://(www.)?google.cn https://www.google.com 302
 ^https?:\/\/(www.)?(g|google)\.cn https://www.google.com 302
 
-# > TikTok Unlock & remove logo (By Choler)
+# > TikTok解锁
 (?<=_region=)CN(?=&) JP 307
-(?<=&app_version=)16..(?=.?.?&) 1 307
-(?<=\?version_code=)16..(?=.?.?&) 1 307
+(?<=&mcc_mnc=)4 2 307
+^(https?:\/\/tnc[\w-]+\.\w+\.com\/.+)(\?)(.+) $1$3 302
+^(https?:\/\/dm[\w-]+\.\w+\.com\/.+)(\?)(.+) $1$3 302
+(^https?:\/\/*\.\w{4}okv.com\/.+&.+)(\d{2}\.3\.\d)(.+) $118.0$3 302
 
 [Panel]
 
@@ -109,4 +111,4 @@ TF下载修正 = type=http-request,pattern=^https?:\/\/testflight\.apple\.com\/v
 
 
 [MITM]
-hostname = %APPEND% trade-acs.m.taobao.com，persistent-policy.com，www.google.cn, www.g.cn，sub.store，testflight.apple.com，beta-api.crunchyroll.com，api.m.jd.com, mp.weixin.qq.com, weixin110.qq.com, testflight.apple.com, security.wechat.com，musicpay.kuwo.cn, vip1.kuwo.cn，raw.githubusercontent.com, gist.githubusercontent.com
+hostname = %APPEND% trade-acs.m.taobao.com，persistent-policy.com，www.google.cn, www.g.cn，sub.store，testflight.apple.com，beta-api.crunchyroll.com，api.m.jd.com, mp.weixin.qq.com, weixin110.qq.com, testflight.apple.com, security.wechat.com，musicpay.kuwo.cn, vip1.kuwo.cn，raw.githubusercontent.com, gist.githubusercontent.com，*.tiktokv.com, *.byteoversea.com, *.tik-tokapi.com
