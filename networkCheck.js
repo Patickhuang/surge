@@ -30,7 +30,7 @@ if (!v4.primaryAddress && !v6.primaryAddress) {
     title: '没有网络',
     content: '尚未连接网络\n请检查网络状态后重试',
     icon: 'wifi.exclamationmark',
-    'icon-color': '#1E90FF',
+    'icon-color': '#CB1B45',
   });
 } else {
   if ($network['cellular-data']) {
@@ -66,7 +66,7 @@ if (!v4.primaryAddress && !v6.primaryAddress) {
         `[节点位置] ${getFlagEmoji(info.countryCode)} | ${info.country} - ${info.city
         }`,
       icon: wifi.ssid ? 'wifi' : 'simcard',
-      'icon-color': wifi.ssid ? '#005CAF' : '#F9BF45',
+      'icon-color': wifi.ssid ? '#1E90FF' : '#F9BF45',
     });
   });
 }
