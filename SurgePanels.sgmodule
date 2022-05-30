@@ -7,15 +7,16 @@ force-http-engine-hosts = %APPEND% boxjs.com, boxjs.net
 
 [Rule]
 # 屏蔽iOS系统更新
-DOMAIN,mesu.apple.com,REJECT
 DOMAIN,gdmf.apple.com,REJECT
-DOMAIN,updates-http.cdn-apple.com,REJECT
-DOMAIN,xp.apple.com,REJECT
 
 [URL Rewrite]
+# 谷歌
 ^https?://(www.)?g.cn https://www.google.com 302
 ^https?://(www.)?google.cn https://www.google.com 302
 ^https?:\/\/(www.)?(g|google)\.cn https://www.google.com 302
+
+# iPadOS
+^https:\/\/mesu\.apple\.com\/assets\/com_apple_MobileAsset_SoftwareUpdate\/com_apple_MobileAsset_SoftwareUpdate\.xml - reject
 
 [Panel]
 
@@ -102,4 +103,4 @@ TF下载修正 = type=http-request,pattern=^https?:\/\/testflight\.apple\.com\/v
 ip-api.com = 208.95.112.1
 
 [MITM]
-hostname = %APPEND% trade-acs.m.taobao.com，persistent-policy.com，www.google.cn, www.g.cn，sub.store，testflight.apple.com，beta-api.crunchyroll.com，api.m.jd.com, mp.weixin.qq.com, weixin110.qq.com, testflight.apple.com, security.wechat.com，musicpay.kuwo.cn, vip1.kuwo.cn，raw.githubusercontent.com, gist.githubusercontent.com
+hostname = %APPEND% trade-acs.m.taobao.com，persistent-policy.com，www.google.cn, www.g.cn，sub.store，testflight.apple.com，beta-api.crunchyroll.com，api.m.jd.com, mp.weixin.qq.com, weixin110.qq.com, testflight.apple.com, security.wechat.com，musicpay.kuwo.cn, vip1.kuwo.cn，raw.githubusercontent.com, gist.githubusercontent.com，mesu.apple.com，-mesu.apple.com
