@@ -30,7 +30,7 @@ if (!v4.primaryAddress && !v6.primaryAddress) {
     title: '没有网络',
     content: '尚未连接网络\n请检查网络状态后重试',
     icon: 'wifi.exclamationmark',
-    'icon-color': '#CB1B45',
+    'icon-color': '#1E90FF',
   });
 } else {
   if ($network['cellular-data']) {
