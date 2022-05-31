@@ -1,5 +1,5 @@
 #!name=Surge Patickhuang
-#!desc=Surge自用 运行时间:配置重载/网络详情面板/google重定向/自动切换策略组/屏蔽iOS系统更新/BoxJs/高级订阅管理工具/Crunchyroll去广告/Safari谷歌搜索重定向/流媒体解锁检测/新冠疫情查询/TestFlight区域限制解除/京东比价 Lite(通知版)/淘宝比价
+#!desc=Surge自用 运行时间:配置重载/网络详情面板/google重定向/自动切换策略组/屏蔽iOS系统更新/BoxJs/Crunchyroll去广告/Safari谷歌搜索重定向/流媒体解锁检测/新冠疫情查询/TestFlight区域限制解除/京东比价 Lite(通知版)/淘宝比价
 #!system=ios
 
 [General]
@@ -66,9 +66,6 @@ Auto-Policy = script-path=https://raw.githubusercontent.com/Patickhuang/surge/ma
 # Boxjs
 Rewrite: BoxJs = type=http-request,pattern=https?:\/\/boxjs\.(com|net),script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/box/chavy.boxjs.js, requires-body=true, timeout=120
 
-# 高级订阅管理工具
-Sub-Store = type=http-request,pattern=^https?:\/\/sub\.store,script-path=https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/backend/sub-store.min.js,requires-body=true,timeout=120,max-size=131072
-
 # Crunchyroll去广告
 Crunchyroll Adblock = type=http-response,pattern=https://beta-api.crunchyroll.com/cms,requires-body=1,max-size=-1,script-path=https://raw.githubusercontent.com/Marcio2536/MySurge/main/Script/crunchyroll.js,script-update-interval=0
 
@@ -103,4 +100,4 @@ TF下载修正 = type=http-request,pattern=^https?:\/\/testflight\.apple\.com\/v
 ip-api.com = 208.95.112.1
 
 [MITM]
-hostname = %APPEND% trade-acs.m.taobao.com，persistent-policy.com，www.google.cn, www.g.cn，sub.store，testflight.apple.com，beta-api.crunchyroll.com，api.m.jd.com, mp.weixin.qq.com, weixin110.qq.com, testflight.apple.com, security.wechat.com，musicpay.kuwo.cn, vip1.kuwo.cn，raw.githubusercontent.com, gist.githubusercontent.com，mesu.apple.com，-mesu.apple.com
+hostname = %APPEND% trade-acs.m.taobao.com，persistent-policy.com，www.google.cn, www.g.cn，testflight.apple.com，beta-api.crunchyroll.com，api.m.jd.com, mp.weixin.qq.com, weixin110.qq.com, testflight.apple.com, security.wechat.com，musicpay.kuwo.cn, vip1.kuwo.cn，raw.githubusercontent.com, gist.githubusercontent.com，mesu.apple.com，-mesu.apple.com
