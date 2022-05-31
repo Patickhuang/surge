@@ -24,7 +24,7 @@ functionstatus = script-name=functionstatus, title="Surge Pro", content="请刷�
 
 covid19 = script-name=covid19, title=新冠疫情查询, content=请刷新, update-interval=60
 
-NetInfoPanel=title="",content="",style=info,script-name=net-info-panel.js,update-interval=1
+networkPanel=title="",content="",style=info,script-name=networkCheck.js,update-interval=1
 
 TrafficStatistics = script-name=TrafficStatistics,title=流量统计,content=请刷新,update-interval=1
 
