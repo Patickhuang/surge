@@ -66,7 +66,6 @@ DOMAIN-SUFFIX,log.web.kugou.com
 DOMAIN-SUFFIX,kgmobilestat.kugou.com
 DOMAIN-SUFFIX,kgmobilestatbak.kugou.com
 DOMAIN-SUFFIX,mobilelog.kugou.com
-#>酷我音乐
 DOMAIN-SUFFIX,c.kuwo.cn
 DOMAIN-SUFFIX,deliver.kuwo.cn
 DOMAIN-SUFFIX,game.kuwo.cn
