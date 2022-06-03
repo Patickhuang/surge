@@ -5,6 +5,7 @@
 # > 同步更新
 #注意:url转-  京东删除api.m.jd 删重写和解锁
 
+hostname = m.sd.10086.cn,m.jd.com, www.zhihu.com, api.zhihu.com, appcloud2.zhihu.com, www.baidu.com, www.google.com.hk, news.ssp.qq.com, r.inews.qq.com, magev6.if.qidian.com, mage.if.qidian.com, qidian.qpic.cn, api.pinduoduo.com, flowplus.meituan.net, capis.didapinche.com, capis*.didapinche.com, fmapp.chinafamilymart.com.cn, mi.gdt.qq.com, avoscloud.com, business.msstatic.com, 47.100.65.202, sf?-ttcdn-tos.pstatp.com, api-access.pangolin-sdk-toutiao.com, v.icbc.com.cn, appconf.mail.163.com, homefront.qunar.com, ad.12306.cn, zone.guiderank-app.com, api.m.jd.com, fbchina.flipchina.cn, dl-cu-hz.lechange.cn, *.bdstatic.com, rich.kuwo.cn, m.ctrip.com, dimg04.c-ctrip.com, ms.jr.jd.com
 
 # > "reject-200" 策略会返回 HTTP 状态码 200，不附带任何额外内容
 # > "reject" 策略返回 HTTP 状态码 200，同时附带 1px gif
