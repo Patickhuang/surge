@@ -1,5 +1,5 @@
 #!name=Surge Patickhuang
-#!desc=Surge自用 运行时间:配置重载/网络详情面板/google重定向/自动切换策略组/屏蔽iOS系统更新/BoxJs/Crunchyroll去广告/Safari谷歌搜索重定向/流媒体解锁检测/新冠疫情查询/京东比价 Lite(通知版)/淘宝比价
+#!desc=Surge自用 运行时间:配置重载/网络详情面板/google重定向/自动切换策略组/屏蔽iOS系统更新/BoxJs/Crunchyroll去广告/Safari谷歌搜索重定向/流媒体解锁检测/#新冠疫情查询/京东比价 Lite(通知版)/淘宝比价
 #!system=ios
 
 [General]
@@ -24,7 +24,7 @@ DOMAIN,gdmf.apple.com,REJECT
 
 functionstatus = script-name=functionstatus, title="Surge Pro", content="请刷新", update-interval=60
 
-covid19 = script-name=covid19, title=新冠疫情查询, content=请刷新, update-interval=60
+##covid19 = script-name=covid19, title=新冠疫情查询, content=请刷新, update-interval=60
 
 NetInfoPanel=title="",content="",style=info,script-name=net-info-panel.js,update-interval=1
 
@@ -44,7 +44,7 @@ functionstatus = type=generic, script-path=https://raw.githubusercontent.com/Pat
 net-info-panel.js=script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/networkCheck.js,type=generic
 
 # 新冠疫情查询
-covid19 = type=generic, script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/Covid19.js
+##covid19 = type=generic, script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/Covid19.js
 
 # 网络界面
 TrafficStatistics = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/trafficstatistics.js,argument=icon=network.badge.shield.half.filled&color=#1E90FF
