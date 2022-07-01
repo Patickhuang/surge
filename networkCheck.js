@@ -62,7 +62,7 @@ if (!v4.primaryAddress && !v6.primaryAddress) {
         (v4.primaryRouter && wifi.ssid ? `[网关] IPv4 @ ${v4.primaryRouter}\n` : '') +
         (v6.primaryRouter && wifi.ssid ? `[网关] IPv6 @ ${v6.primaryRouter}\n` : '') +
         `[节点 IP] ${info.query}\n` +
-        `[节点 ISP] ${info.isp}\n` +
+        `[节点协议] ${info.isp}\n` +
         `[节点位置] ${getFlagEmoji(info.countryCode)} | ${info.country} - ${info.city
         }`,
       icon: wifi.ssid ? 'wifi' : 'simcard',
