@@ -2,7 +2,7 @@
 #!desc=VIP功能解锁
 
 [MITM]
-hostname = %APPEND% biz.caiyunapp.com,account.wps.cn,*.wtzw.com,api.polaxiong.com,mb3admin.com,buy.itunes.apple.com,xluser-ssl.xunlei.com,vsco.co, api.revenuecat.com,pan.baidu.com,lcs-mobile-cops.adobe.io,createpdf.acrobat.com,mp.weixin.qq.com
+hostname = %APPEND% biz.caiyunapp.com,account.wps.cn,*.wtzw.com,api.polaxiong.com,mb3admin.com,buy.itunes.apple.com,xluser-ssl.xunlei.com,vsco.co, api.revenuecat.com,pan.baidu.com,lcs-mobile-cops.adobe.io,createpdf.acrobat.com,mp.weixin.qq.com,*.kuwo.cn,*.lrts.me
 
 [Script]
 WPS稻壳会员1 = type=http-request,pattern=^https?:\/\/account\.wps\.cn\/api\/v3\/mine\/vips,requires-body=1,script-path=https://raw.githubusercontent.com/yqc007/QuantumultX/master/WPSDocerVIPuserCrack.js,script-update-interval=0,max-size=0
@@ -51,18 +51,11 @@ Emby = type=http-response,pattern=^https:\/\/mb3admin\.com\/admin\/service(\/reg
 # > WPS解锁超级V，wpsV，稻壳V
 WPS解锁超级V = type=http-response,pattern=^https?:\/\/account\.wps\.cn\/api\/users,requires-body=1,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Wps.js,script-update-interval=0,max-size=0
 
-# > 酷我音乐解锁SV
-酷我音乐解锁SV = type=http-response,pattern=^https?:\/\/vip1\.kuwo\.cn\/(vip\/v2\/user\/vip|vip\/spi/mservice),requires-body=1,script-path=https://raw.githubusercontent.com/28413761/QX/main/jiaoben/Kuwo.js,script-update-interval=0,max-size=0
-
-# > 066 酷我音乐解除下载权限 (2022-01-25) by ddgksf2013
-酷我音乐解除下载权限 = type=http-request,pattern=^https?:\/\/musicpay\.kuwo\.cn\/music\.pay\?newver=\d,requires-body=1,script-path=https://raw.githubusercontent.com/28413761/QX/main/jiesuo/kuwodl.js,script-update-interval=0,max-size=0
+# > 酷我音乐_SVIP
+酷我音乐_SVIP = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/.*\.(kuwo|lrts)\.(cn|me)\/(a\.p|music\.pay|(vip\/(v2|enc)\/(theme|user\/vip))|(EcomResource|(Mobile)?Ad)Serv(er|ice)).*,script-path=https://raw.githubusercontent.com/nameking77/Qx/main/rewrite/kw.js
 
 # > 060 我奥篮球 （2021-05-15） by photonmang
 我奥篮球 = type=http-response,pattern=http://api.woaoo.net/.+,requires-body=1,script-path=https://raw.githubusercontent.com/28413761/QX/main/jiesuo/walq.js,script-update-interval=0,max-size=0
 
 # > 059 西窗烛 （2021-05-14） by ddgksf2013
 西窗烛 = type=http-response,pattern=https://lchttpapi.xczim.com/*,requires-body=1,script-path=https://raw.githubusercontent.com/28413761/QX/main/jiesuo/xcz.js,script-update-interval=0,max-size=0
-
-
-# > 056 酷我皮肤（2021-04-25） by ddgksf2013
-酷我皮肤 = type=http-response,pattern=^https?:\/\/vip1\.kuwo\.cn\/(vip\/v2\/theme) ,requires-body=1,script-path=https://raw.githubusercontent.com/28413761/QX/main/jiesuo/theme.js,script-update-interval=0,max-size=0
