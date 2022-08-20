@@ -96,4 +96,4 @@ http-response ^https?:\/\/(raw|gist)\.githubusercontent.com/.*\.js$ script-path=
 ip-api.com = 208.95.112.1
 
 [MITM]
-hostname = %APPEND% trade-acs.m.taobao.com，persistent-policy.com，www.google.cn, www.g.cn，testflight.apple.com，beta-api.crunchyroll.com，api.m.jd.com, mp.weixin.qq.com, weixin110.qq.com, testflight.apple.com, security.wechat.com，raw.githubusercontent.com, gist.githubusercontent.com，mesu.apple.com，-mesu.apple.com
+hostname = %APPEND% raw.githubusercontent.com, gist.githubusercontent.com,trade-acs.m.taobao.com,persistent-policy.com,www.google.cn, www.g.cn,testflight.apple.com,beta-api.crunchyroll.com,api.m.jd.com,mp.weixin.qq.com,weixin110.qq.com,testflight.apple.com,security.wechat.com,mesu.apple.com,-mesu.apple.com
