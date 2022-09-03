@@ -1,5 +1,5 @@
 #!name=Surge Patickhuang
-#!desc=Surge自用 运行时间:配置重载/网络详情面板/google重定向/自动切换策略组/屏蔽iOS系统更新/BoxJs/Crunchyroll去广告/Safari谷歌搜索重定向/流媒体解锁检测/#新冠疫情查询/京东比价 Lite(通知版)/淘宝比价/HTTP-Capture
+#!desc=Surge自用 运行时间:配置重载/网络详情面板/google重定向/自动切换策略组/屏蔽iOS系统更新/BoxJs/Crunchyroll去广告/Safari谷歌搜索重定向/流媒体解锁检测/#新冠疫情查询/京东比价 Lite(通知版)/淘宝比价/HTTP-Capture/AdGuard规则
 #!system=ios
 
 [General]
@@ -10,6 +10,17 @@ skip-proxy = %APPEND% iosapps.itunes.apple.com
 [Rule]
 # 屏蔽iOS系统更新
 DOMAIN,gdmf.apple.com,REJECT
+
+#Surge 能直接使用的 AdGuard 维护的域名规则
+DOMAIN-SET,https://cdn.jsdelivr.net/gh/geekdada/surge-list/domain-set/dns-filter.txt,REJECT
+DOMAIN-SET,https://cdn.jsdelivr.net/gh/geekdada/surge-list/domain-set/tracking-protection-filter.txt,REJECT
+DOMAIN-SET,https://cdn.jsdelivr.net/gh/geekdada/surge-list/domain-set/social-media-filter.txt,REJECT
+DOMAIN-SET,https://cdn.jsdelivr.net/gh/geekdada/surge-list/domain-set/neohosts.txt,REJECT
+DOMAIN-SET,https://cdn.jsdelivr.net/gh/geekdada/surge-list/domain-set/neohosts-full.txt,REJECT
+DOMAIN-SET,https://cdn.jsdelivr.net/gh/geekdada/surge-list/domain-set/chinese-filter.txt,REJECT
+DOMAIN-SET,https://cdn.jsdelivr.net/gh/geekdada/surge-list/domain-set/base-filter.txt,REJECT
+DOMAIN-SET,https://cdn.jsdelivr.net/gh/geekdada/surge-list/domain-set/annoyances-filter.txt,REJECT
+DOMAIN-SET,https://cdn.jsdelivr.net/gh/geekdada/surge-list/domain-set/adaway.txt,REJECT
 
 [URL Rewrite]
 # 谷歌
