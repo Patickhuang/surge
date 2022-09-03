@@ -11,7 +11,7 @@ skip-proxy = %APPEND% iosapps.itunes.apple.com
 # 屏蔽iOS系统更新
 DOMAIN,gdmf.apple.com,REJECT
 
-#Surge 能直接使用的 AdGuard 维护的域名规则
+# Surge 能直接使用的 AdGuard 维护的域名规则
 DOMAIN-SET,https://cdn.jsdelivr.net/gh/geekdada/surge-list/domain-set/dns-filter.txt,REJECT
 DOMAIN-SET,https://cdn.jsdelivr.net/gh/geekdada/surge-list/domain-set/tracking-protection-filter.txt,REJECT
 DOMAIN-SET,https://cdn.jsdelivr.net/gh/geekdada/surge-list/domain-set/social-media-filter.txt,REJECT
