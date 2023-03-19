@@ -1,5 +1,5 @@
 #!name=Surge Patickhuang
-#!desc=Surge自用 运行时间:配置重载/网络详情面板/google重定向/自动切换策略组/屏蔽iOS系统更新/BoxJs/Crunchyroll去广告/Safari谷歌搜索重定向/流媒体解锁检测/#新冠疫情查询/京东比价 Lite(通知版)/淘宝比价/HTTP-Capture/AdGuard规则/sileo嗨客源修复
+#!desc=Surge自用 运行时间:配置重载/网络详情面板/google重定向/自动切换策略组/屏蔽iOS系统更新/BoxJs/Crunchyroll去广告/Safari谷歌搜索重定向/流媒体解锁检测/QX重写&规则集转化/京东比价 Lite(通知版)/淘宝比价/HTTP-Capture/AdGuard规则/sileo嗨客源修复
 #!system=ios
 
 [General]
@@ -37,8 +37,6 @@ functionstatus = script-name=functionstatus, title="Surge Pro", content="请刷�
 
 capture = title = "HTTP Capture", content = "DISABLE", icon = "doc.text.magnifyingglass", icon-color = "FF6D1F", script-name = HTTP-Capture, update-interval = 1
 
-##covid19 = script-name=covid19, title=新冠疫情查询, content=请刷新, update-interval=60
-
 NetInfoPanel=title="",content="",style=info,script-name=net-info-panel.js,update-interval=1
 
 TrafficStatistics = script-name=TrafficStatistics,title=流量统计,content=请刷新,update-interval=1
@@ -58,9 +56,6 @@ HTTP-Capture = type=generic, script-path=https://raw.githubusercontent.com/DecoA
 
 # 网络状态
 net-info-panel.js=script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/networkCheck.js,type=generic
-
-# 新冠疫情查询
-##covid19 = type=generic, script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/Covid19.js
 
 # 网络界面
 TrafficStatistics = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/trafficstatistics.js,argument=icon=network.badge.shield.half.filled&color=#1E90FF
@@ -106,8 +101,19 @@ http-response ^https?:\/\/(raw|gist)\.githubusercontent.com/.*\.js$ script-path=
 # sileo嗨客源修复
 sileo嗨客源修复 = type=http-request,script-path=https://raw.githubusercontent.com/rartv/SurgeScript/main/Jailbreak/SileoHiKe.js,pattern=https?:\/\/repo\.qqtlr\.com\/\.\/downloads\.php%3Frequest=\d+\.deb,max-size=131072,timeout=10,script-update-interval=0,enable=true
 
+#QX重写&规则集转化
+#!desc=使用方法在重写链接末尾面加上qx，在规则集链接末尾加上r_parser.list
+#!author=@小白脸 
+#!使用手册https://github.com/chengkongyiban/stash/tree/main/Rewrite_Parser_Wiki
+QX转换 = type=http-request,pattern=\/[^/]+\.[^/]+qx$|qx\?(jsc|hnadd|hndel|n|y|x|del|i)=,requires-body=1,max-size=0,script-path=https://github.com/chengkongyiban/stash/raw/main/js/QX_Rewrite_Parser.js ,timeout=60
+
+规则集转换 = type=http-request,pattern=r_parser.list$|r_parser.list\?.*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chengkongyiban/stash/main/js/rule_parser.js ,timeout=60
+
+#在QX脚本结尾加上 _script-converter-(stash|surge|loon|shadowrocket).js 根据你自己的app填写
+脚本转换 = type=http-request,pattern=_script-converter-(stash|surge|loon|shadowrocket)\.js$,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/xream/scripts/main/surge/modules/script-converter/script-converter.js, time=60
+
 [Host]
 ip-api.com = 208.95.112.1
 
 [MITM]
-hostname = %APPEND% raw.githubusercontent.com, gist.githubusercontent.com,trade-acs.m.taobao.com,persistent-policy.com,www.google.cn, www.g.cn,testflight.apple.com,beta-api.crunchyroll.com,api.m.jd.com,mp.weixin.qq.com,weixin110.qq.com,testflight.apple.com,security.wechat.com,mesu.apple.com,-mesu.apple.com
+hostname = %APPEND% github.com:443, raw.githubusercontent.com:443,gist.githubusercontent.com,gitlab.com,trade-acs.m.taobao.com,persistent-policy.com,www.google.cn, www.g.cn,testflight.apple.com,beta-api.crunchyroll.com,api.m.jd.com,mp.weixin.qq.com,weixin110.qq.com,testflight.apple.com,security.wechat.com,mesu.apple.com,-mesu.apple.com
