@@ -1,5 +1,5 @@
 #!name=Surge Patickhuang
-#!desc=Surge自用 运行时间:配置重载/网络详情面板/google重定向/自动切换策略组/屏蔽iOS系统更新/BoxJs/Crunchyroll去广告/Safari谷歌搜索重定向/流媒体解锁检测/QX重写&规则集转化/京东比价 Lite(通知版)/淘宝比价/HTTP-Capture/AdGuard规则/sileo嗨客源修复
+#!desc=Surge自用 运行时间:配置重载/网络详情面板/google重定向/自动切换策略组/屏蔽iOS系统更新/微博广告/解除微信链接限制/百度云VIP倍速播放/TestFlight下载修正/美图秀秀VIP/Web豆瓣电影和电视剧添加便捷播放按钮/BoxJs/Crunchyroll去广告/Safari谷歌搜索重定向/流媒体解锁检测/QX重写&规则集转化/京东比价 Lite(通知版)/淘宝比价/HTTP-Capture/AdGuard规则/sileo嗨客源修复
 #!system=ios
 
 [General]
@@ -9,22 +9,78 @@ skip-proxy = %APPEND% iosapps.itunes.apple.com
 
 [Rule]
 # 屏蔽iOS系统更新
-DOMAIN,gdmf.apple.com,🚫 广告拦截
+DOMAIN,gdmf.apple.com,direct
 
 # Surge 能直接使用的 AdGuard 维护的域名规则
-DOMAIN-SET,https://cdn.jsdelivr.net/gh/geekdada/surge-list/domain-set/social-media-filter.txt,🚫 广告拦截
-DOMAIN-SET,https://cdn.jsdelivr.net/gh/geekdada/surge-list/domain-set/neohosts.txt,🚫 广告拦截
-DOMAIN-SET,https://cdn.jsdelivr.net/gh/geekdada/surge-list/domain-set/neohosts-full.txt,🚫 广告拦截
-DOMAIN-SET,https://cdn.jsdelivr.net/gh/geekdada/surge-list/domain-set/chinese-filter.txt,🚫 广告拦截
-DOMAIN-SET,https://cdn.jsdelivr.net/gh/geekdada/surge-list/domain-set/base-filter.txt,🚫 广告拦截
-DOMAIN-SET,https://cdn.jsdelivr.net/gh/geekdada/surge-list/domain-set/annoyances-filter.txt,🚫 广告拦截
-DOMAIN-SET,https://cdn.jsdelivr.net/gh/geekdada/surge-list/domain-set/adaway.txt,🚫 广告拦截
+DOMAIN-SET,https://cdn.jsdelivr.net/gh/geekdada/surge-list/domain-set/social-media-filter.txt,direct
+DOMAIN-SET,https://cdn.jsdelivr.net/gh/geekdada/surge-list/domain-set/neohosts.txt,direct
+DOMAIN-SET,https://cdn.jsdelivr.net/gh/geekdada/surge-list/domain-set/neohosts-full.txt,direct
+DOMAIN-SET,https://cdn.jsdelivr.net/gh/geekdada/surge-list/domain-set/chinese-filter.txt,direct
+DOMAIN-SET,https://cdn.jsdelivr.net/gh/geekdada/surge-list/domain-set/base-filter.txt,direct
+DOMAIN-SET,https://cdn.jsdelivr.net/gh/geekdada/surge-list/domain-set/annoyances-filter.txt,direct
+DOMAIN-SET,https://cdn.jsdelivr.net/gh/geekdada/surge-list/domain-set/adaway.txt,direct
 
 [URL Rewrite]
-# 谷歌
-^https?://(www.)?g.cn https://www.google.com 302
-^https?://(www.)?google.cn https://www.google.com 302
-^https?:\/\/(www.)?(g|google)\.cn https://www.google.com 302
+# Safari 全能搜索
+# 以下为 Safari 全能搜索、需要把 Safari 的搜索引擎设置为: DuckDuckGo
+
+# gm (Google图片)
+^https:\/\/duckduckgo.com\/\?q=gm\+([^&]+).+ https://www.google.com/search?&tbm=isch&q=$1 302
+
+# gh (GitHub)
+^https:\/\/duckduckgo.com\/\?q=gh\+([^&]+).+ https://github.com/search?q=$1 302
+
+# tf (Google 搜索 TestFlight)
+^https:\/\/duckduckgo.com\/\?q=tf(\+|%20)([^&]+).+ https://www.google.com/search?as_q=$2&as_sitesearch=testflight.apple.com 302
+
+# wb (微博)
+^https:\/\/duckduckgo.com\/\?q=wb\+([^&]+).+ https://s.weibo.com/weibo/$1 302
+
+# wx (微信)
+^https:\/\/duckduckgo.com\/\?q=wx\+([^&]+).+ https://weixin.sogou.com/weixinwap?query=$1 302
+
+# jd (京东)
+^https:\/\/duckduckgo.com\/\?q=jd\+([^&]+).+ https://so.m.jd.com/ware/search.action?keyword=$1 302
+
+# tb (淘宝)
+^https:\/\/duckduckgo.com\/\?q=tb\+([^&]+).+ https://s.m.taobao.com/h5?q=$1 302
+
+# tm (天猫)
+^https:\/\/duckduckgo.com\/\?q=tm\+([^&]+).+ https://s.m.tmall.com/m/search.htm?q=$1 302
+
+# ytb (YouTube)
+^https:\/\/duckduckgo.com\/\?q=ytb\+([^&]+).+ https://www.youtube.com/results?search_query=$1 302
+
+# ph (PornHub)
+^https:\/\/duckduckgo.com\/\?q=ph\+([^&]+).+ https://cn.pornhub.com/video/search?search=$1 302
+
+# db (豆瓣）
+^https:\/\/duckduckgo.com\/\?q=db\+([^&]+).+ https://m.douban.com/search/?query=$1 302
+
+# bi (必应)
+^https:\/\/duckduckgo.com\/\?q=bi\+([^&]+).+ https://cn.bing.com/search?q=$1 302
+
+# bd (百度)
+^https:\/\/duckduckgo.com\/\?q=bd\+([^&]+).+ https://www.baidu.com/s?wd=$1 302
+
+# ccn (App Store 临时换至中国区)
+^https:\/\/duckduckgo.com\/\?q=ccn&.+ https://itunes.apple.com/WebObjects/MZStore.woa/wa/resetAndRedirect?dsf=143465&mt=8&url=/WebObjects/MZStore.woa/wa/viewSoftware?mt=8&id=1108187390&cc=cn&urlDesc= 302
+
+# uus (App Store 临时换至美国区)
+^https:\/\/duckduckgo.com\/\?q=uus&.+ https://itunes.apple.com/WebObjects/MZStore.woa/wa/resetAndRedirect?dsf=143441&mt=8&url=/WebObjects/MZStore.woa/wa/viewSoftware?mt=8&id=1108187390&cc=us&urlDesc= 302
+
+# hhk (App Store 临时换至香港区)
+^https:\/\/duckduckgo.com\/\?q=hhk&.+ https://itunes.apple.com/WebObjects/MZStore.woa/wa/resetAndRedirect?dsf=143463&mt=8&url=/WebObjects/MZStore.woa/wa/viewSoftware?mt=8&id=1108187390&cc=hk&urlDesc= 302
+
+# ddg (DuckDuckGo)
+^https:\/\/duckduckgo.com\/\?q=ddg\+([^&]+).+ https://duckduckgo.com/?ia=about&q=$1 302
+
+# 无指令 (Google)
+^https:\/\/duckduckgo.com\/\?q=([^&]+).+ https://www.google.com/search?q=$1 302
+
+# 阻止 google.com 跳转到 google.com.hk
+^https?:\/\/(www\.)?g\.cn https://www.google.com/ncr 302
+^https?:\/\/(www\.)?google\.cn https://www.google.com/ncr 302
 
 # iPadOS
 ^https:\/\/mesu\.apple\.com\/assets\/com_apple_MobileAsset_SoftwareUpdate\/com_apple_MobileAsset_SoftwareUpdate\.xml - reject
@@ -93,6 +149,11 @@ http-response ^https?://trade-acs\.m\.taobao\.com/gw/mtop\.taobao\.detail\.getde
 # 微信去广告
 http-response ^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/Wechat.js
 
+百度搜索防跳转 = type=http-response,pattern=^https?\:\/\/boxer\.baidu\.com\/scheme,script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/baidu-no-redirect.js
+
+微博去广告 = type=http-response,pattern=^https?://(sdk|wb)app\.uve\.weibo\.com(/interface/sdk/sdkad.php|/wbapplua/wbpullad.lua),requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/wb_launch.js
+微博去广告 = type=http-response,pattern=^https?://m?api\.weibo\.c(n|om)/2/(messageflow/notice|search/(container_timeline|finder)|statuses/(container_timeline_hot|container_timeline_unread|container_timeline|unread|extend|positives/get|(friends|video)(/|_)(mix)?timeline)|stories/(video_stream|home_list)|(groups|fangle)/timeline|profile/statuses|comments/build_comments|photo/recommend_list|service/picfeed|searchall|cardlist|page|!/(photos/pic_recommend_status|live/media_homelist)|video/tiny_stream_video_list|photo/info|remind/unread_count),requires-body=1,max-size=-1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/wb_ad.js
+
 # 脚本转换器
 http-response ^https?:\/\/(raw|gist)\.githubusercontent.com/.*\.js$ script-path=https://raw.githubusercontent.com/Peng-YM/ScriptConverter/master/js-converter.js, requires-body = true
 
@@ -107,6 +168,14 @@ QX转换 = type=http-request,pattern=\/[^/]+\.[^/]+qx$|qx\?(jsc|hnadd|hndel|n|y|
 
 规则集转换 = type=http-request,pattern=r_parser.list$|r_parser.list\?.*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chengkongyiban/stash/main/js/rule_parser.js ,timeout=60
 
+TestFlight下载修正 = type=http-request,pattern=^https?:\/\/testflight\.apple\.com\/v\d\/accounts\/.+?\/install$,requires-body=1,script-update-interval=-1,max-size=0,script-path=https://gist.githubusercontent.com/NobyDa/9be418b93afc5e9c8a8f4d28ae403cf2/raw/TF_Download.js
+
+百度云VIP倍速播放 = type=http-response,pattern=https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user,requires-body=1,max-size=0,timeout=20,script-path=https://raw.githubusercontent.com/TributePaulWalker/Profiles/main/JavaScript/Surge/BaiduCloud.js
+
+Web豆瓣电影和电视剧添加便捷播放按钮 = type=http-response,pattern=^https?:\/\/m\.douban\.com\/movie\/subject\/\d+\/,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/I-am-R-E/Surge/main/JavaScript/DouBan.js
+
+美图秀秀VIP = type=http-response,pattern=^https?:\/\/(h5|api)\.xiuxiu\.meitu\.com\/v\d\/(h\d\/vip|vip|user)\/,requires-body=1,script-path=https://raw.githubusercontent.com/I-am-R-E/QuantumultX/main/JavaScript/MeiTuXiuXiu.js
+
 #在QX脚本结尾加上 _script-converter-(stash|surge|loon|shadowrocket).js 根据你自己的app填写
 脚本转换 = type=http-request,pattern=_script-converter-(stash|surge|loon|shadowrocket)\.js$,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/xream/scripts/main/surge/modules/script-converter/script-converter.js, time=60
 
@@ -114,4 +183,4 @@ QX转换 = type=http-request,pattern=\/[^/]+\.[^/]+qx$|qx\?(jsc|hnadd|hndel|n|y|
 ip-api.com = 208.95.112.1
 
 [MITM]
-hostname = %APPEND% boxjs.com,boxjs.net,*.boxjs.com,*.boxjs.net,github.com:443, raw.githubusercontent.com:443,gist.githubusercontent.com,gitlab.com,trade-acs.m.taobao.com,persistent-policy.com,www.google.cn, www.g.cn,testflight.apple.com,beta-api.crunchyroll.com,api.m.jd.com,mp.weixin.qq.com,weixin110.qq.com,testflight.apple.com,security.wechat.com,mesu.apple.com,-mesu.apple.com
+hostname = %APPEND% boxjs.com,boxjs.net,*.boxjs.com,*.boxjs.net,github.com:443, raw.githubusercontent.com:443,gist.githubusercontent.com,gitlab.com,trade-acs.m.taobao.com,persistent-policy.com,www.google.cn, www.g.cn,testflight.apple.com,beta-api.crunchyroll.com,api.m.jd.com,mp.weixin.qq.com,weixin110.qq.com,testflight.apple.com,security.wechat.com,mesu.apple.com,-mesu.apple.com,duckduckgo.com, *.google.cn, *.google.com.hk, sub.store, boxer.baidu.com, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, security.wechat.com, weixin110.qq.com, testflight.apple.com, pan.baidu.com, m.douban.com, h5.xiuxiu.meitu.com, api.xiuxiu.meitu.com, *.baidu.com, www.zhihu.com
