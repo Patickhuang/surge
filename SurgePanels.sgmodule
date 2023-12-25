@@ -100,21 +100,17 @@ functionstatus = script-name=functionstatus, title="Surge Pro", content="请刷�
 
 capture = title = "HTTP Capture", content = "DISABLE", icon = "doc.text.magnifyingglass", icon-color = "FF6D1F", script-name = HTTP-Capture, update-interval = 1
 
-NetInfoPanel=title="",content="",style=info,script-name=net-info-panel.js,update-interval=1
-
-TrafficStatistics = script-name=TrafficStatistics,title=流量统计,content=请刷新,update-interval=1
-
 DNS信息 = script-name=flushDNS,title=DNS信息,content=请刷新,update-interval=600
+
+网络延迟 = script-name=网络延迟,update-interval=1
+
+配置重载 = script-name=配置重载,title=配置重载,content=配置重载,style=info,update-interval=-1
 
 
 [Script]
 
 # HTTP-Capture
 HTTP-Capture = type=generic, script-path=https://raw.githubusercontent.com/DecoAri/JavaScript/main/Surge/Capture.js,raw=true
-
-网络延迟 = script-name=网络延迟,update-interval=1
-
-配置重载 = script-name=配置重载,title=配置重载,content=配置重载,style=info,update-interval=-1
 
 # DNS信息
 flushDNS = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/flushDNS.js,argument=title=DNS信息&icon=bonjour&color=#1E90FF
