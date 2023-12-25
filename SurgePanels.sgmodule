@@ -106,15 +106,11 @@ TrafficStatistics = script-name=TrafficStatistics,title=流量统计,content=请
 
 DNS信息 = script-name=flushDNS,title=DNS信息,content=请刷新,update-interval=600
 
-stream-all = script-name=stream-all,title=流媒体解锁检测,content=请刷新面板,update-interval=-1
-
 
 [Script]
 
 # HTTP-Capture
 HTTP-Capture = type=generic, script-path=https://raw.githubusercontent.com/DecoAri/JavaScript/main/Surge/Capture.js,raw=true
-
-网络信息 = script-name=网络信息,title=网络信息,content=请刷新,style=info,update-interval=60
 
 网络延迟 = script-name=网络延迟,update-interval=1
 
@@ -122,9 +118,6 @@ HTTP-Capture = type=generic, script-path=https://raw.githubusercontent.com/DecoA
 
 # DNS信息
 flushDNS = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/flushDNS.js,argument=title=DNS信息&icon=bonjour&color=#1E90FF
-
-# 流媒体解锁检测
-stream-all = type=generic,timeout=15,script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/stream.js
 
 # 运行模式
 event network-changed script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/running-mode.js
