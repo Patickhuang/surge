@@ -115,6 +115,12 @@ HTTP-Capture = type=generic, script-path=https://raw.githubusercontent.com/DecoA
 # DNS信息
 flushDNS = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/flushDNS.js,argument=title=DNS信息&icon=bonjour&color=#1E90FF
 
+网络信息 = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/TributePaulWalker/Profiles/main/JavaScript/Surge/ipcheck.js
+
+网络延迟 = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/TributePaulWalker/Profiles/main/JavaScript/Surge/ConnectivityTest.js,argument=title=网络延迟&server=false
+
+配置重载 = type=generic,script-path=https://raw.githubusercontent.com/TributePaulWalker/Profiles/main/JavaScript/Surge/Profile-Reload.js
+
 # 运行模式
 event network-changed script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/running-mode.js
 
