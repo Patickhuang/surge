@@ -104,6 +104,8 @@ DNS信息 = script-name=flushDNS,title=DNS信息,content=请刷新,update-interv
 
 网络延迟 = script-name=网络延迟,update-interval=1
 
+节假提醒 = script-name=节假提醒,update-interval=3600
+
 配置重载 = script-name=配置重载,title=配置重载,content=配置重载,style=info,update-interval=-1
 
 
@@ -120,6 +122,8 @@ flushDNS = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/
 网络延迟 = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/TributePaulWalker/Profiles/main/JavaScript/Surge/ConnectivityTest.js,argument=title=网络延迟&server=false
 
 配置重载 = type=generic,script-path=https://raw.githubusercontent.com/TributePaulWalker/Profiles/main/JavaScript/Surge/Profile-Reload.js
+
+今日黄历播报 = type=cron,timeout=30,cronexp=30 7 * * *,wake-system=1,script-path=https://raw.githubusercontent.com/TributePaulWalker/Profiles/main/JavaScript/Surge/wnCalendar.js
 
 # 运行模式
 event network-changed script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/running-mode.js
